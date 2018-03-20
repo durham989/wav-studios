@@ -1,11 +1,11 @@
 {
   "firebase": {
-    "apiKey": "",
-    "authDomain": "XXXXXX.firebaseapp.com",
-    "databaseURL": "https://XXXXXX.firebaseio.com",
-    "projectId": "XXXXXX",
-    "storageBucket": "XXXXXX.appspot.com",
-    "messagingSenderId": "000000000000"
+    "apiKey": "AIzaSyB1HokgLe3PXOkCXlwgJZXWRklUQriEKzs",
+    "authDomain": "wav-studios.firebaseapp.com",
+    "databaseURL": "https://wav-studios.firebaseio.com",
+    "projectId": "wav-studios",
+    "storageBucket": "wav-studios.appspot.com",
+    "messagingSenderId": "153525572978"
   },
   "gtmKey" : "GTM-XXXXXXX"
 }
