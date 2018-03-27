@@ -2,8 +2,10 @@
  * Angular 2 decorators and services
  */
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 import { environment } from 'environments/environment';
 import { AppState } from './app.service';
+import { AngularFirestore } from 'angularfire2/firestore';
 
 /**
  * App Component
@@ -25,11 +27,21 @@ export class AppComponent implements OnInit {
   public showDevModule: boolean = environment.showDevModule;
 
   constructor(
-    public appState: AppState
+    public appState: AppState,
+    private router: Router,
+    private db: AngularFirestore
   ) {}
 
   public ngOnInit() {
     console.log('Initial App State', this.appState.state);
+    
+    // auto-scroll to the top of each page
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+        return;
+      }
+      window.scrollTo(0,0);
+    });
   }
 
 }

@@ -61,6 +61,8 @@ declare var ENV: string;
 declare var HMR: boolean;
 declare var System: SystemJS;
 // declare const FIREBASE_CONFIG: FirebaseConfig;
+declare var StripeCheckout: any;
+declare var Stripe: any;
 
 interface FirebaseConfig {
   apiKey: string;

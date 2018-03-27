@@ -1,0 +1,25 @@
+<div class="container home-container">
+  <div class="row center-alignment">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div class="staff-tee-positioning">
+        <img class="img-fluid product-image" src="https://firebasestorage.googleapis.com/v0/b/wav-studios.appspot.com/o/StaffTeeFront_500px.png?alt=media&token=814f0535-681a-41fb-b8e5-520ed9eddc8b"
+          (click)="staffFrontToBack()">
+        <img class="img-fluid product-image" src="https://firebasestorage.googleapis.com/v0/b/wav-studios.appspot.com/o/StaffTeeBack_500px.png?alt=media&token=fe4a1f04-200b-4885-94fd-04ffc177b592"
+          (click)="staffFrontToBack()">
+      </div>
+    </div>
+  </div>
+  <div class="row center-alignment">
+    <div class="col-lg-2"></div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+      <!-- <p>PLACEHOLDER FOR PRODUCT DETAILS AND CHECKOUT</p> -->
+      <!-- <input type="text" formControlName="name" placeholder="Jane Doe"> -->
+      <!-- <div id="card-element" class="field"></div>
+      <button type="submit" (click)="purchaseStaffTee()">
+        BUY
+      </button> -->
+      <wav-studios-custom-payment [amount]="4500" [label]="'WAV Studios Staff Tee'"></wav-studios-custom-payment>
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+</div>

@@ -1,8 +1,5 @@
-import {
-  Component,
-  OnInit
-} from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AppState } from '../app.service';
 import { Title } from './title';
 import { XLargeDirective } from './x-large';
@@ -34,12 +31,15 @@ export class HomeComponent implements OnInit {
    * Set our default values
    */
   public localState = { value: '' };
+  public staffFront: Boolean = true;
+  public skullFront: Boolean = true;
   /**
    * TypeScript public modifiers
    */
   constructor(
     public appState: AppState,
-    public title: Title
+    public title: Title,
+    private router: Router
   ) {}
 
   public ngOnInit() {
@@ -54,4 +54,25 @@ export class HomeComponent implements OnInit {
     this.appState.set('value', value);
     this.localState.value = '';
   }
+
+  public staffFrontToBack() {
+    this.staffFront = !this.staffFront;
+  }
+
+  public skullFrontToBack() {
+    this.skullFront = !this.skullFront;
+  }
+
+  public navigateToStaffTee() {
+    this.router.navigate(['/products/staff-tee']);
+  }
+
+  public navigateToSkullTee() {
+    this.router.navigate(['/products/skull-tee']);
+  }
+
+  public navigateHome() {
+    this.router.navigate(['/home']);
+  }
 }
+
