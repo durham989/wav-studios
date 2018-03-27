@@ -82,8 +82,8 @@ export class StaffComponent implements OnInit {
       country: 'US',
       currency: 'usd',
       total: {
-        amount: this.amount,
-        label: this.label
+        amount: 4500,
+        label: 'WAV Studios Staff Tee'
       },
     });
 
@@ -93,9 +93,10 @@ export class StaffComponent implements OnInit {
     // 3. Register listener
     this.paymentRequest.on('source', async (event) => {
       console.log(event);
-      setTimeout(() => {
-        event.complete('success')
-      }, 1000)
+      event.complete('success');
+      // setTimeout(() => {
+      //   event.complete('success')
+      // }, 1000);
     });
 
     // 4. Create the button
