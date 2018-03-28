@@ -62,6 +62,8 @@ npm-debug.log
 .webpack.json
 /compiled/
 dll/
+functions/node_modules
+/functions/node_modules
 
 # Doc #
 /doc/

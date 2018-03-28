@@ -1,25 +1,65 @@
 <div class="container home-container">
   <div class="row center-alignment">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
       <div class="staff-tee-positioning">
-        <img class="img-fluid product-image" src="https://firebasestorage.googleapis.com/v0/b/wav-studios.appspot.com/o/StaffTeeFront_500px.png?alt=media&token=814f0535-681a-41fb-b8e5-520ed9eddc8b"
+        <img *ngIf="staffFront" class="img-fluid product-image" src="https://firebasestorage.googleapis.com/v0/b/wav-studios.appspot.com/o/StaffTeeFront_500px.png?alt=media&token=814f0535-681a-41fb-b8e5-520ed9eddc8b"
           (click)="staffFrontToBack()">
-        <img class="img-fluid product-image" src="https://firebasestorage.googleapis.com/v0/b/wav-studios.appspot.com/o/StaffTeeBack_500px.png?alt=media&token=fe4a1f04-200b-4885-94fd-04ffc177b592"
+        <img *ngIf="!staffFront" class="img-fluid product-image" src="https://firebasestorage.googleapis.com/v0/b/wav-studios.appspot.com/o/StaffTeeBack_500px.png?alt=media&token=fe4a1f04-200b-4885-94fd-04ffc177b592"
           (click)="staffFrontToBack()">
       </div>
     </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 product-details-box">
+      <div class="product-details-positioning">
+        <h4 class="product-title">WAV Studios Staff Pocket Tee</h4>
+        <p></p>
+        <p class="product-description">100% pre-shrunk, ringspun pigment-dyed short-sleeved cotton pocket tee. "Staff" text printed on the front pocket, with the WAV Studios staff insignia printed on back. Double-needle stitched for durability, available only in white.</p>
+        <p></p>
+        <h4 class="product-title">${{amount * 0.01}}</h4>
+        <p></p>
+        <form [formGroup]="orderForm">
+            <div class="form-group">
+              <label class="product-label">Size:
+                <select class="custom-select form-control" formControlName="size">
+                  <option selected>Size</option>
+                  <option value="S">S</option>
+                  <option value="M">M</option>
+                  <option value="L">L</option>
+                  <option value="XL">XL</option>
+                  <option value="XXL">XXL</option>
+                  <option value="3XL">3XL</option>
+                </select>
+              </label>
+            </div>
+            <div class="form-group">
+              <label class="product-label">Quantity:
+                <input type="number" class="form-control" formControlName="quantity">
+              </label>
+            </div>
+          </form>
+        <button type="submit" (click)="purchaseStaffTee()" class="purchase-button">
+          BUY
+        </button>
+      </div>
+    </div>
   </div>
-  <div class="row center-alignment">
+  <!-- <div class="row center-alignment">
     <div class="col-lg-2"></div>
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
-      <!-- <p>PLACEHOLDER FOR PRODUCT DETAILS AND CHECKOUT</p> -->
-      <!-- <input type="text" formControlName="name" placeholder="Jane Doe"> -->
-      <!-- <div id="card-element" class="field"></div>
-      <button type="submit" (click)="purchaseStaffTee()">
-        BUY
-      </button> -->
-      <wav-studios-custom-payment [amount]="4500" [label]="'WAV Studios Staff Tee'"></wav-studios-custom-payment>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 product-details-box">
+      <div class="col-lg-6" style="text-align: center;">
+        <p>WAV Studios Staff Tee</p>
+        <p>$50 (includes shipping and fees)</p>
+        <p>100% pre-shrunk, ringspun pigment-dyed cotton.</p>
+        <p>Double-needle stitched for durability and dyed with eco-friendly colors.</p>
+        <p>Sizes S-3XL</p>
+      </div>
+      <div class="col-lg-6">
+        <div class="product-details-spacing">
+          <button type="submit" (click)="purchaseStaffTee()" class="purchase-button">
+            BUY
+          </button>
+        </div>
+      </div>
     </div>
     <div class="col-lg-2"></div>
-  </div>
+  </div> -->
 </div>

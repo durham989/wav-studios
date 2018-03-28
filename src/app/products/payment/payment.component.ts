@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, AfterViewInit, Input, ViewChild } from '@angular/core';
 import { PaymentService } from '../../services/payment.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { PaymentService } from '../../services/payment.service';
   templateUrl: './payment.component.html',
   styleUrls: ['./payment.component.scss']
 })
-export class PaymentComponent implements OnInit {
+export class PaymentComponent implements AfterViewInit {
 
   @Input() amount: number; // Total amount
   @Input() label: string; // Label for product/purchase
@@ -19,7 +19,7 @@ export class PaymentComponent implements OnInit {
 
   constructor(private pmt: PaymentService) { }
 
-  ngOnInit() {
+  ngAfterViewInit() {
 
     // 1. instantiate a paymentRequest object
     this.paymentRequest = this.pmt.stripe.paymentRequest({
@@ -38,13 +38,12 @@ export class PaymentComponent implements OnInit {
     // 3. register listener
     this.paymentRequest.on('source', async (event) => {
       console.log(event);
-      event.complete('success');
 
       // Fires when the user submits their card
       // Make an HTTP call to charge on the backend (using a timeout to simulate the response)
-      // setTimeout(() => {
-      //   event.complete('success');
-      // }, 1000);
+      setTimeout(() => {
+        event.complete('success');
+      }, 1000);
     });
 
     
@@ -73,6 +72,7 @@ export class PaymentComponent implements OnInit {
       this.prButton.mount(this.payElement.nativeElement);
     } else {  
       console.error('your browser is old school!');
+      this.payElement.nativeElement.display = 'none';
     } 
 
   }

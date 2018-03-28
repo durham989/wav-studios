@@ -14,7 +14,7 @@ export const environment: Environment = {
 
   showDevModule: true,
 
-  // stripeKey: 'pk_test_oUwyjKnd6Js1T0Sw9sIMqA5t',
+  stripeKey: 'pk_test_oUwyjKnd6Js1T0Sw9sIMqA5t',
   firebase: {
     "apiKey": "AIzaSyB1HokgLe3PXOkCXlwgJZXWRklUQriEKzs",
     "authDomain": "wav-studios.firebaseapp.com",
@@ -23,7 +23,7 @@ export const environment: Environment = {
     "storageBucket": "wav-studios.appspot.com",
     "messagingSenderId": "153525572978"
   },
-  stripeKey: 'sk_test_CTUaiNrmtNIKtmJh1ZdK4Hcv',
+  // stripeKey: 'sk_test_CTUaiNrmtNIKtmJh1ZdK4Hcv',
 
   /** Angular debug tools in the dev console
    * https://github.com/angular/angular/blob/86405345b781a9dc2438c0fbe3e9409245647019/TOOLS_JS.md

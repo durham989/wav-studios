@@ -1,19 +1,45 @@
 <div class="container home-container">
-  <div class="row center-alignment">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      <div class="skull-tee-positioning">
-        <img class="img-fluid product-image" src="https://firebasestorage.googleapis.com/v0/b/wav-studios.appspot.com/o/Skully_WAV_Front_500px.png?alt=media&token=86153c3c-0b1a-4a32-b5f9-9e1778242e9f"
-          (click)="skullFrontToBack()">
-        <img class="img-fluid product-image" src="https://firebasestorage.googleapis.com/v0/b/wav-studios.appspot.com/o/Skully_WAV_Back_500px.png?alt=media&token=c3b6c9d6-794b-47d7-9370-faad7ce4c266"
-          (click)="skullFrontToBack()">
+    <div class="row center-alignment">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+        <div class="staff-tee-positioning">
+          <img *ngIf="skullFront" class="img-fluid product-image" src="https://firebasestorage.googleapis.com/v0/b/wav-studios.appspot.com/o/Skully_WAV_Front_500px.png?alt=media&token=86153c3c-0b1a-4a32-b5f9-9e1778242e9f"
+            (click)="skullFrontToBack()">
+          <img *ngIf="!skullFront" class="img-fluid product-image" src="https://firebasestorage.googleapis.com/v0/b/wav-studios.appspot.com/o/Skully_WAV_Back_500px.png?alt=media&token=c3b6c9d6-794b-47d7-9370-faad7ce4c266"
+            (click)="skullFrontToBack()">
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 product-details-box">
+        <div class="product-details-positioning">
+          <h4 class="product-title">WAV Studios Skull Pocket Tee</h4>
+          <p></p>
+          <p class="product-description">100% pre-shrunk, ringspun pigment-dyed short-sleeved cotton pocket tee. WAV Studios logo graphic printed on the front pocket, with the signature WAV Studios skull graphic printed on back. Double-needle stitched for durability, available only in white.</p>
+          <p></p>
+          <h4 class="product-title">${{amount * 0.01}}</h4>
+          <p></p>
+          <form [formGroup]="orderForm">
+              <div class="form-group">
+                <label class="product-label">Size:
+                  <select class="custom-select form-control" formControlName="size">
+                    <option selected>Size</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                    <option value="3XL">3XL</option>
+                  </select>
+                </label>
+              </div>
+              <div class="form-group">
+                <label class="product-label">Quantity:
+                  <input type="number" class="form-control" formControlName="quantity">
+                </label>
+              </div>
+            </form>
+          <button type="submit" (click)="purchaseStaffTee()" class="purchase-button">
+            BUY
+          </button>
+        </div>
       </div>
     </div>
   </div>
-  <div class="row center-alignment">
-    <div class="col-lg-2"></div>
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 product-details-box">
-      <p>PLACEHOLDER FOR PRODUCT DETAILS AND CHECKOUT</p>
-    </div>
-    <div class="col-lg-2"></div>
-  </div>
-</div>
