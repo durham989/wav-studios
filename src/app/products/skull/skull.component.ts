@@ -102,7 +102,7 @@ export class SkullComponent implements OnInit {
     var orderProduct = this.orderForm.get('productTitle').value;
     this.handler = StripeCheckout.configure({
       key: environment.stripeKey,
-      image: 'https://firebasestorage.googleapis.com/v0/b/wav-studios.appspot.com/o/WAV_Studios%400.5x.png?alt=media&token=29a546f4-ba0e-4a20-819f-bb5719d6bb75',
+      image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
       locale: 'auto',
       token: token => {
         this.paymentService.processPayment(token, (this.amount * orderQuantity), orderSize, orderQuantity, orderProduct);
@@ -113,7 +113,9 @@ export class SkullComponent implements OnInit {
   handlePayment() {
     this.handler.open({
       name: 'WAV Studios Skull Pocket Tee',
-      amount: (this.amount * this.orderForm.get('quantity').value)
+      amount: (this.amount * this.orderForm.get('quantity').value),
+      shippingAddress: true,
+      billingAddress: true
     });
   }
 

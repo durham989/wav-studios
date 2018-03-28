@@ -6,6 +6,8 @@
           (click)="skullFrontToBack()">
         <img *ngIf="!skullFront" class="img-fluid product-image" src="https://firebasestorage.googleapis.com/v0/b/wav-studios.appspot.com/o/Skully_WAV_Back_500px.png?alt=media&token=c3b6c9d6-794b-47d7-9370-faad7ce4c266"
           (click)="skullFrontToBack()">
+        <p *ngIf="skullFront" class="product-photo-caption">[ FRONT ]</p>
+        <p *ngIf="!skullFront" class="product-photo-caption">[ BACK ]</p>
       </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 product-details-box">
