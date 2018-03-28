@@ -13,14 +13,15 @@
         <h4 class="product-title">WAV Studios Staff Pocket Tee</h4>
         <p></p>
         <p class="product-description">100% pre-shrunk, ringspun pigment-dyed short-sleeved cotton pocket tee. "Staff" text printed on the front pocket, with the WAV Studios staff insignia printed on back. Double-needle stitched for durability, available only in white.</p>
+        <p class="product-description">If purchased, you will be sent an email containing a summary of your order and further information regarding tracking your shipment.</p>
         <p></p>
         <h4 class="product-title">${{amount * 0.01}}</h4>
+        <p class="detail-text-tax">Price includes shipping and fees.</p>
         <p></p>
         <form [formGroup]="orderForm">
             <div class="form-group">
               <label class="product-label">Size:
                 <select class="custom-select form-control" formControlName="size">
-                  <option selected>Size</option>
                   <option value="S">S</option>
                   <option value="M">M</option>
                   <option value="L">L</option>
@@ -39,6 +40,9 @@
         <button type="submit" (click)="purchaseStaffTee()" class="purchase-button">
           BUY
         </button>
+        <div *ngIf="paymentSuccess" class="alert alert-success payment-success-alert" role="alert">
+          You've successfully purchased a WAV Studios Staff Tee! Look out for an email with details on your order and shipping.
+        </div>
       </div>
     </div>
   </div>

@@ -28,6 +28,7 @@ export class StaffComponent implements OnInit {
   public paymentRequest: any;
   public prButton: any;
   public handler: any;
+  public paymentSuccess: Boolean;
 
   // Order Form
   public orderForm = new FormGroup({
@@ -38,9 +39,11 @@ export class StaffComponent implements OnInit {
 
 
   @HostListener('window:popstate')
-    onPopstate() {
-      this.handler.close()
-    }
+  onPopstate() {
+    this.handler.close();
+    this.paymentSuccess = true;
+    this.router.navigate(['/home']);
+  }
 
   constructor (private router: Router, 
     private stripeService: StripeService,
@@ -50,7 +53,7 @@ export class StaffComponent implements OnInit {
   public ngOnInit() {
     console.log('hello `Staff` component');
     this.staffFront = true;
-    this.amount = 5000;
+    this.amount = 4800;
     this.label = 'WAV Studios Staff Pocket Tee';
     this.afAuth.auth.signInAnonymously();
     // this.initializeStripeElement();

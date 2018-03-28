@@ -28,6 +28,7 @@ export class SkullComponent implements OnInit {
   public paymentRequest: any;
   public prButton: any;
   public handler: any;
+  public paymentSuccess: Boolean;
 
   // Order Form
   public orderForm = new FormGroup({
@@ -38,9 +39,11 @@ export class SkullComponent implements OnInit {
 
 
   @HostListener('window:popstate')
-    onPopstate() {
-      this.handler.close()
-    }
+  onPopstate() {
+    this.handler.close();
+    this.paymentSuccess = true;
+    this.router.navigate(['/home']);
+  }
 
   constructor (private router: Router, 
     private stripeService: StripeService,
@@ -50,7 +53,7 @@ export class SkullComponent implements OnInit {
   public ngOnInit() {
     console.log('hello `Skull` component');
     this.skullFront = true;
-    this.amount = 6600;
+    this.amount = 6000;
     this.label = 'WAV Studios Skull Pocket Tee';
     this.afAuth.auth.signInAnonymously();
     // this.initializeStripeElement();
