@@ -10,8 +10,8 @@ enableProdMode();
 export const environment: Environment = {
   production: true,
   showDevModule: false,
-  stripeKey: 'pk_test_oUwyjKnd6Js1T0Sw9sIMqA5t',
-  // stripeKey: 'sk_test_CTUaiNrmtNIKtmJh1ZdK4Hcv',
+  stripeKey: 'pk_live_FlBmMAf0ielTOYCKoKHluMQq',
+  // stripeKey: 'pk_test_oUwyjKnd6Js1T0Sw9sIMqA5t',
   firebase: {
     "apiKey": "AIzaSyB1HokgLe3PXOkCXlwgJZXWRklUQriEKzs",
     "authDomain": "wav-studios.firebaseapp.com",

@@ -3,7 +3,11 @@ const admin = require('firebase-admin');
 
 admin.initializeApp(functions.config().firebase);
 
-const stripe = require('stripe')(functions.config().stripe.testkey);
+// STRIPE TEST KEY
+// const stripe = require('stripe')(functions.config().stripe.testkey);
+
+// STRIPE LIVE KEY
+const stripe = require('stripe')(functions.config().stripe.secret);
 
 exports.stripeCharge = functions.database
   .ref('/payments/{userId}/{paymentId}')
