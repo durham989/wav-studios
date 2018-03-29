@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { StaffComponent } from './products/staff/staff.component';
 import { SkullComponent } from './products/skull/skull.component';
+import { CrewComponent } from './products/crew/crew.component';
 // import { AboutComponent } from './about';
 // import { NoContentComponent } from './no-content';
 
@@ -10,6 +11,7 @@ export const ROUTES: Routes = [
   { path: 'home',  component: HomeComponent },
   { path: 'products/staff-tee',  component: StaffComponent },
   { path: 'products/skull-tee',  component: SkullComponent },
+  { path: 'products/crewneck-sweater',  component: CrewComponent },
   { path: '**',    component: HomeComponent },
   // { path: 'about', component: AboutComponent },
   // { path: 'detail', loadChildren: './+detail#DetailModule'},

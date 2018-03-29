@@ -25,6 +25,7 @@ import { HomeComponent } from './home/home.component';
 import { StaffComponent } from './products/staff/staff.component';
 import { SkullComponent } from './products/skull/skull.component';
 import { PaymentComponent } from './products/payment/payment.component';
+import { CrewComponent } from './products/crew/crew.component';
 import { AboutComponent } from './about';
 import { NoContentComponent } from './no-content';
 import { XLargeDirective } from './home/x-large';
@@ -62,7 +63,8 @@ interface StoreType {
     StaffComponent,
     HeaderComponent,
     SkullComponent,
-    PaymentComponent
+    PaymentComponent,
+    CrewComponent
   ],
   /**
    * Import Angular's modules.

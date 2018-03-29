@@ -71,6 +71,10 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/products/skull-tee']);
   }
 
+  public navigateToCrewSweater() {
+    this.router.navigate(['/products/crewneck-sweater']);
+  }
+
   public navigateHome() {
     this.router.navigate(['/home']);
   }
