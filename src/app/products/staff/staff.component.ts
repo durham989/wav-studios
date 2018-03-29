@@ -103,6 +103,7 @@ export class StaffComponent implements OnInit {
       locale: 'auto',
       token: token => {
         this.paymentService.processPayment(token, (this.amount * orderQuantity), orderSize, orderQuantity, orderProduct);
+        this.paymentSuccess = true;
       }
     });
   }

@@ -38,8 +38,7 @@ export class SkullComponent implements OnInit {
   });
 
 
-  @HostListener('window:popstate')
-  onPopstate() {
+  @HostListener('window:popstate') onPopstate() {
     this.handler.close();
     this.paymentSuccess = true;
     this.router.navigate(['/home']);
@@ -106,6 +105,7 @@ export class SkullComponent implements OnInit {
       locale: 'auto',
       token: token => {
         this.paymentService.processPayment(token, (this.amount * orderQuantity), orderSize, orderQuantity, orderProduct);
+        this.paymentSuccess = true;
       }
     });
   }
