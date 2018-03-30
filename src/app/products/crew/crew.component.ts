@@ -53,6 +53,7 @@ export class CrewComponent implements OnInit {
   public ngOnInit() {
     console.log('hello `Crew` component');
     this.crewFront = true;
+    this.paymentSuccess = false;
     this.amount = 9500;
     this.label = 'WAV Studios Classic Crewneck Sweater';
     this.afAuth.auth.signInAnonymously();

@@ -53,6 +53,7 @@ export class StaffComponent implements OnInit {
   public ngOnInit() {
     console.log('hello `Staff` component');
     this.staffFront = true;
+    this.paymentSuccess = false;
     this.amount = 4800;
     this.label = 'WAV Studios Staff Pocket Tee';
     this.afAuth.auth.signInAnonymously();

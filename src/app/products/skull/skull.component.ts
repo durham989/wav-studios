@@ -52,6 +52,7 @@ export class SkullComponent implements OnInit {
   public ngOnInit() {
     console.log('hello `Skull` component');
     this.skullFront = true;
+    this.paymentSuccess = false;
     this.amount = 6000;
     this.label = 'WAV Studios Skull Pocket Tee';
     this.afAuth.auth.signInAnonymously();
