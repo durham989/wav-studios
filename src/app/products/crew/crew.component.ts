@@ -34,7 +34,7 @@ export class CrewComponent implements OnInit {
   public orderForm = new FormGroup({
     size: new FormControl('M', Validators.required),
     quantity: new FormControl(1, Validators.required),
-    productTitle: new FormControl('WAV Studios Staff Pocket Tee', Validators.required)
+    productTitle: new FormControl('WAV Studios Classic Crewneck Sweater', Validators.required)
   });
 
 
