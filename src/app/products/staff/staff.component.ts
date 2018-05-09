@@ -58,7 +58,7 @@ export class StaffComponent implements OnInit {
     this.label = 'WAV Studios Staff Pocket Tee';
     this.afAuth.auth.signInAnonymously();
     // this.initializeStripeElement();
-    this.initializeStripeHandler();
+    // this.initializeStripeHandler();
   }
 
   public staffFrontToBack() {
@@ -98,6 +98,7 @@ export class StaffComponent implements OnInit {
     var orderQuantity = this.orderForm.get('quantity').value;
     var orderSize = this.orderForm.get('size').value;
     var orderProduct = this.orderForm.get('productTitle').value;
+    console.log('shirt size is: ' + orderSize);
     this.handler = StripeCheckout.configure({
       key: environment.stripeKey,
       image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
@@ -119,6 +120,7 @@ export class StaffComponent implements OnInit {
   }
 
   purchaseStaffTee() {
+    this.initializeStripeHandler();
     this.handlePayment();
   }
 }
