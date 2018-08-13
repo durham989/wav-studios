@@ -2,12 +2,16 @@
   <div class="row center-alignment">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
       <div class="staff-tee-positioning">
-        <img *ngIf="staffFront" class="img-fluid product-image" src="https://firebasestorage.googleapis.com/v0/b/wav-studios.appspot.com/o/StaffTeeFront_500px.png?alt=media&token=814f0535-681a-41fb-b8e5-520ed9eddc8b"
+        <!-- <img *ngIf="staffFront" class="img-fluid product-image" src="https://firebasestorage.googleapis.com/v0/b/wav-studios.appspot.com/o/StaffTeeFront_500px.png?alt=media&token=814f0535-681a-41fb-b8e5-520ed9eddc8b"
           (click)="staffFrontToBack()">
         <img *ngIf="!staffFront" class="img-fluid product-image" src="https://firebasestorage.googleapis.com/v0/b/wav-studios.appspot.com/o/StaffTeeBack_500px.png?alt=media&token=fe4a1f04-200b-4885-94fd-04ffc177b592"
-          (click)="staffFrontToBack()">
-        <p *ngIf="staffFront" class="product-photo-caption">[ FRONT ]</p>
-        <p *ngIf="!staffFront" class="product-photo-caption">[ BACK ]</p>
+          (click)="staffFrontToBack()"> -->
+        <img *ngIf="!staffTeeFlipped" [class.flip-out-ver-left]="staffTeeFlipped" [class.flip-in-ver-right]="!staffTeeFlipped"
+          src="../../../assets/img/StaffTeeFront_500px.png" class="img-fluid product-image" (click)="flipStaffTee()">
+        <img *ngIf="staffTeeFlipped" [class.flip-out-ver-left]="!staffTeeFlipped" [class.flip-in-ver-right]="staffTeeFlipped"
+          src="../../../assets/img/StaffTeeBack_500px.png" class="img-fluid product-image" (click)="flipStaffTee()">
+        <p *ngIf="!staffTeeFlipped" class="product-photo-caption">[ FRONT ]</p>
+        <p *ngIf="staffTeeFlipped" class="product-photo-caption">[ BACK ]</p>
       </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 product-details-box">

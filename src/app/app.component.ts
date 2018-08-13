@@ -1,7 +1,7 @@
 /**
  * Angular 2 decorators and services
  */
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { environment } from 'environments/environment';
 import { AppState } from './app.service';
@@ -26,6 +26,8 @@ export class AppComponent implements OnInit {
   public url = 'https://kasuriagroup.com';
   public showDevModule: boolean = environment.showDevModule;
 
+  @ViewChild('homeVideo') videoplayer: any;
+
   constructor(
     public appState: AppState,
     private router: Router,
@@ -34,6 +36,9 @@ export class AppComponent implements OnInit {
 
   public ngOnInit() {
     console.log('Initial App State', this.appState.state);
+
+    this.videoplayer.nativeElement.autoplay = true;
+    this.videoplayer.nativeElement.muted = true;
     
     // auto-scroll to the top of each page
     this.router.events.subscribe((evt) => {

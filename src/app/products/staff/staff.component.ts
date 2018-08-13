@@ -20,6 +20,7 @@ export class StaffComponent implements OnInit {
   
   public localState = { value: '' };
   public staffFront: Boolean;
+  public staffTeeFlipped: Boolean = false;
   
   // Stripe Variables
   public elements: Elements;
@@ -122,5 +123,9 @@ export class StaffComponent implements OnInit {
   purchaseStaffTee() {
     this.initializeStripeHandler();
     this.handlePayment();
+  }
+
+  flipStaffTee() {
+    this.staffTeeFlipped = !this.staffTeeFlipped;
   }
 }

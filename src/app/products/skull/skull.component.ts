@@ -20,6 +20,7 @@ export class SkullComponent implements OnInit {
   
   public localState = { value: '' };
   public skullFront: Boolean;
+  public skullTeeFlipped: Boolean = false;
   
   // Stripe Variables
   public elements: Elements;
@@ -124,5 +125,9 @@ export class SkullComponent implements OnInit {
   purchaseStaffTee() {
     this.initializeStripeHandler();
     this.handlePayment();
+  }
+
+  flipSkullTee() {
+    this.skullTeeFlipped = !this.skullTeeFlipped;
   }
 }
