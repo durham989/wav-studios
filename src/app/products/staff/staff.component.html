@@ -6,9 +6,9 @@
           (click)="staffFrontToBack()">
         <img *ngIf="!staffFront" class="img-fluid product-image" src="https://firebasestorage.googleapis.com/v0/b/wav-studios.appspot.com/o/StaffTeeBack_500px.png?alt=media&token=fe4a1f04-200b-4885-94fd-04ffc177b592"
           (click)="staffFrontToBack()"> -->
-        <img *ngIf="!staffTeeFlipped" [class.flip-out-ver-left]="staffTeeFlipped" [class.flip-in-ver-right]="!staffTeeFlipped"
+        <img [class.d-none]="staffTeeFlipped" [class.flip-out-ver-left]="staffTeeFlipped" [class.flip-in-ver-right]="!staffTeeFlipped"
           src="https://firebasestorage.googleapis.com/v0/b/wav-studios.appspot.com/o/StaffTeeFront_500px.png?alt=media&token=814f0535-681a-41fb-b8e5-520ed9eddc8b" class="img-fluid product-image" (click)="flipStaffTee()">
-        <img *ngIf="staffTeeFlipped" [class.flip-out-ver-left]="!staffTeeFlipped" [class.flip-in-ver-right]="staffTeeFlipped"
+        <img [class.d-none]="!staffTeeFlipped" [class.flip-out-ver-left]="!staffTeeFlipped" [class.flip-in-ver-right]="staffTeeFlipped"
           src="https://firebasestorage.googleapis.com/v0/b/wav-studios.appspot.com/o/StaffTeeBack_500px.png?alt=media&token=fe4a1f04-200b-4885-94fd-04ffc177b592" class="img-fluid product-image" (click)="flipStaffTee()">
         <p *ngIf="!staffTeeFlipped" class="product-photo-caption">[ FRONT ]</p>
         <p *ngIf="staffTeeFlipped" class="product-photo-caption">[ BACK ]</p>
