@@ -20,7 +20,7 @@ export class SkullComponent implements OnInit {
   
   public localState = { value: '' };
   public skullFront: Boolean;
-  public skullTeeFlipped: Boolean = false;
+  public skullTeeFlipped: Boolean;
   
   // Stripe Variables
   public elements: Elements;
@@ -53,6 +53,7 @@ export class SkullComponent implements OnInit {
   public ngOnInit() {
     console.log('hello `Skull` component');
     this.skullFront = true;
+    this.skullTeeFlipped = false;
     this.paymentSuccess = false;
     this.amount = 6000;
     this.label = 'WAV Studios Skull Pocket Tee';

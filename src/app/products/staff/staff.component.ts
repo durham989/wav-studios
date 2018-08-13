@@ -20,7 +20,7 @@ export class StaffComponent implements OnInit {
   
   public localState = { value: '' };
   public staffFront: Boolean;
-  public staffTeeFlipped: Boolean = false;
+  public staffTeeFlipped: Boolean;
   
   // Stripe Variables
   public elements: Elements;
@@ -54,6 +54,7 @@ export class StaffComponent implements OnInit {
   public ngOnInit() {
     console.log('hello `Staff` component');
     this.staffFront = true;
+    this.staffTeeFlipped = false;
     this.paymentSuccess = false;
     this.amount = 4800;
     this.label = 'WAV Studios Staff Pocket Tee';
