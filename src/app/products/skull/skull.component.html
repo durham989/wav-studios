@@ -8,9 +8,9 @@
           (click)="skullFrontToBack()">
         <p *ngIf="skullFront" class="product-photo-caption">[ FRONT ]</p>
         <p *ngIf="!skullFront" class="product-photo-caption">[ BACK ]</p> -->
-        <img *ngIf="!skullTeeFlipped" [class.flip-out-ver-left]="skullTeeFlipped" [class.flip-in-ver-right]="!skullTeeFlipped" src="../../../assets/img/Skully_WAV_Front_500px.png"
+        <img *ngIf="!skullTeeFlipped" [class.flip-out-ver-left]="skullTeeFlipped" [class.flip-in-ver-right]="!skullTeeFlipped" src="https://firebasestorage.googleapis.com/v0/b/wav-studios.appspot.com/o/Skully_WAV_Front_500px.png?alt=media&token=86153c3c-0b1a-4a32-b5f9-9e1778242e9f"
           class="img-fluid product-image" (click)="flipSkullTee()">
-        <img *ngIf="skullTeeFlipped" [class.flip-out-ver-left]="!skullTeeFlipped" [class.flip-in-ver-right]="skullTeeFlipped" src="../../../assets/img/Skully_WAV_Back_500px.png"
+        <img *ngIf="skullTeeFlipped" [class.flip-out-ver-left]="!skullTeeFlipped" [class.flip-in-ver-right]="skullTeeFlipped" src="https://firebasestorage.googleapis.com/v0/b/wav-studios.appspot.com/o/Skully_WAV_Back_500px.png?alt=media&token=c3b6c9d6-794b-47d7-9370-faad7ce4c266"
           class="img-fluid product-image" (click)="flipSkullTee()">
         <p *ngIf="!skullTeeFlipped" class="product-photo-caption">[ FRONT ]</p>
         <p *ngIf="skullTeeFlipped" class="product-photo-caption">[ BACK ]</p>
