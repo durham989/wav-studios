@@ -15,6 +15,14 @@
 	        animation: flip-in-ver-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
+.step-card-responsive {
+  max-width: 100%;
+  height: auto;
+  cursor: pointer;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
 @-webkit-keyframes flip-out-ver-left {
   0% {
     -webkit-transform: rotateY(0);
